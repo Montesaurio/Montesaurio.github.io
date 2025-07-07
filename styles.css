@@ -1,0 +1,128 @@
+@font-face {
+  font-family: Paragraph;
+  src: url('Resources/Fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Title;
+  src: url('Resources/Fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #d3d3d3;
+}
+
+h1{
+  font-family: Title, Helvetica, sans-serif;
+  color: rgba(0, 255, 50, 1.0);
+  text-align: center; 
+  font-weight: 400;   /*400 normal*/
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: Paragraph, Helvetica, sans-serif;
+  color: rgba(160, 255, 140, 1.0);
+  text-align: center;
+  font-weight: normal;
+  font-size:2rem;
+}
+
+.p1 {
+  font-family: Paragraph, Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 1.0);
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.125rem;
+}
+
+.p1 a {
+  color: rgba(160, 255, 140, 1.0);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.p1 a:hover {
+  color: rgb(194, 255, 182);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.image-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 1rem auto;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 255, 50, 0.15);
+}
+
+@media screen and (min-width: 600px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: Paragraph, Helvetica, sans-serif;
+  font-size: 2rem;
+   opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.image-container:hover img {
+  filter: brightness(60%);
+}
+
+.image-container:hover .overlay-text {
+  opacity: 1;
+}
+
